@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+<script>
+
+
+$(document).keypress(function(e){
+    if (e.which == 13){
+        $("#clickme").click();
+    }
+        if (e.which == 49){
+  if($("#lol").is(":visible")){
+        $("#lol").click();
+    }}
+            if (e.which == 50){
+  if($("#lol").is(":visible")){
+        $("#lol1").click();
+    }}
+    
+            if (e.which == 51){
+  if($("#lol").is(":visible")){
+        $("#lol2").click();
+    }}
+    
+            if (e.which == 52){
+  if($("#lol").is(":visible")){
+        $("#lol3").click();
+    }}
+    
+    
+            if (e.which == 53){
+  if($("#lol").is(":visible")){
+        $("#lol4").click();
+    }}
+});
+
+
+$(document).ready(function(){
+  $('#mapdist').hide()
+  $('#weather1').hide();
+  $('#weather2').hide();
+  $('#weather3').hide();
+  $('#event1').hide();
+  $('#event2').hide();
+  $('#lol').hide();
+  $('#lol1').hide();
+  $('#lol2').hide();
+  $('#lol3').hide();
+  $('#lol4').hide();
+  $('#lol5').hide();
+  $('#lol6').hide();
+  $('#lol7').hide();
+  
+    	var flag= 3;
+  //$('#lol').hide();
+  $("#clickme").mouseenter(function(){
+  //if (("#lol").is(":hidden")){
+  $('#weather1').hide();
+  $('#weather2').hide();
+  $('#weather3').hide();
+  $('#event1').hide();
+  $('#event2').hide();
+
+
+  if($("#lol").is(":visible")){
+  	
+  	
+  	$('#mapdist').hide(300)
+    $("#lol").hide(300);
+    $("#lol1").hide(300);
+    $("#lol2").hide(300);
+    $("#lol3").hide(300);
+    $("#lol4").hide(300);
+    $("#lol5").hide(300);
+    $("#lol6").hide(300);
+    $("#lol7").hide(300);
+
+  	
+	$("#lol").css({left:1000, top:90})
+	$("#lol1").css({left:1000, top:90})
+	$("#lol2").css({left:1000, top:90})
+	$("#lol3").css({left:1000, top:90})
+	$("#lol4").css({left:1000, top:90})
+	$("#lol5").css({left:850, top:340})
+	$("#lol6").css({left:800, top:230})
+	$("#lol7").css({left:700, top:200})
+	
+	
+	flag=3
+    }
+  else{
+  $("#lol").show(300);
+    $('#mapdist').show(600)
+    $("#lol1").show(300);
+    $("#lol2").show(300);
+    $("#lol3").show(300);
+    $("#lol4").show(300);
+    $("#lol5").show(300);
+    $("#lol6").show(300);
+    $("#lol7").show(300);
+    $("#lol").css({left:1000, top:90})
+	$("#lol1").css({left:1000, top:90})
+	$("#lol2").css({left:1000, top:90})
+	$("#lol3").css({left:1000, top:90})
+	$("#lol4").css({left:1000, top:90})
+	$("#lol5").css({left:850, top:340})
+	$("#lol6").css({left:800, top:230})
+	$("#lol7").css({left:700, top:200})
+	
+  	$( "#lol" ).animate({ "left": "-=80px", "top": "-=90px" }, 100);
+  	$( "#lol1" ).animate({ "left": "-=120px", "top":"-=45px" }, 100);
+  	$( "#lol2" ).animate({ "left": "-=150px" }, 100);
+  	$( "#lol3" ).animate({ "left": "-=120px","top": "+=45px" }, 100);
+  	$( "#lol4" ).animate({ "left": "-=80px", "top": "+=90px" }, 100);
+  	$( "#lol5" ).animate({ "left": "+=50px" }, 100);
+  	$( "#lol6" ).animate({ "left": "+=50px", "top": "-=50px" }, 100);
+  	$( "#lol7" ).animate({  "top": "-=50px" }, 100);
+  	
+  	flag=4;
+	
+	
+  }
+ 	
+  	
+  })
+  
+  $("#clickme").click(function(){
+  $('#weather1').hide();
+  $('#weather2').hide();
+  $('#weather3').hide();
+  $('#event1').hide();
+  $('#event2').hide();
+
+
+  if($("#lol").is(":visible")){
+  	
+  	
+  	$('#mapdist').hide()  
+    $("#lol").hide(300);
+    $("#lol1").hide(300);
+    $("#lol2").hide(300);
+    $("#lol3").hide(300);
+    $("#lol4").hide(300);
+    $("#lol5").hide(300);
+    $("#lol6").hide(300);
+    $("#lol7").hide(300);
+
+  	
+	$("#lol").css({left:1000, top:90})
+	$("#lol1").css({left:1000, top:90})
+	$("#lol2").css({left:1000, top:90})
+	$("#lol3").css({left:1000, top:90})
+	$("#lol4").css({left:1000, top:90})
+	$("#lol5").css({left:850, top:340})
+	$("#lol6").css({left:800, top:230})
+	$("#lol7").css({left:700, top:200})
+	
+	
+	flag=3
+    }
+  else{
+  $("#lol").show(300);
+  	 $('#mapdist').show(600)
+    $("#lol1").show(300);
+    $("#lol2").show(300);
+    $("#lol3").show(300);
+    $("#lol4").show(300);
+    $("#lol5").show(300);
+    $("#lol6").show(300);
+    $("#lol7").show(300);
+    $("#lol").css({left:1000, top:90})
+	$("#lol1").css({left:1000, top:90})
+	$("#lol2").css({left:1000, top:90})
+	$("#lol3").css({left:1000, top:90})
+	$("#lol4").css({left:1000, top:90})
+	$("#lol5").css({left:850, top:340})
+	$("#lol6").css({left:800, top:230})
+	$("#lol7").css({left:700, top:200})
+	
+  	$( "#lol" ).animate({ "left": "-=80px", "top": "-=90px" }, 100);
+  	$( "#lol1" ).animate({ "left": "-=120px", "top":"-=45px" }, 100);
+  	$( "#lol2" ).animate({ "left": "-=150px" }, 100);
+  	$( "#lol3" ).animate({ "left": "-=120px","top": "+=45px" }, 100);
+  	$( "#lol4" ).animate({ "left": "-=80px", "top": "+=90px" }, 100);
+  	$( "#lol5" ).animate({ "left": "+=50px" }, 100);
+  	$( "#lol6" ).animate({ "left": "+=50px", "top": "-=50px" }, 100);
+  	$( "#lol7" ).animate({  "top": "-=50px" }, 100);
+  	
+  	flag=4;
+	
+	
+  }
+  });
+
+  $("#lol").click(function(){
+    $('#weather1').show();
+      $('#mapdist').hide()
+
+  $('#lol').hide();
+  $('#lol1').hide();
+  $('#lol2').hide();
+  $('#lol3').hide();
+  $('#lol4').hide();
+  $('#lol5').hide();
+  $('#lol6').hide();
+  $('#lol7').hide();
+
+});
+
+  $("#lol1").click(function(){
+    $('#weather2').show();
+      $('#mapdist').hide()
+
+  $('#lol').hide();
+  $('#lol1').hide();
+  $('#lol2').hide();
+  $('#lol3').hide();
+  $('#lol4').hide();
+  $('#lol5').hide();
+  $('#lol6').hide();
+  $('#lol7').hide();
+
+});
+
+  $("#lol2").click(function(){
+    $('#weather3').show();
+      $('#mapdist').hide()
+
+  $('#lol').hide();
+  $('#lol1').hide();
+  $('#lol2').hide();
+  $('#lol3').hide();
+  $('#lol4').hide();
+  $('#lol5').hide();
+  $('#lol6').hide();
+  $('#lol7').hide();
+
+});
+
+  $("#lol3").click(function(){
+    $('#event1').show();
+      $('#mapdist').hide()
+
+  $('#lol').hide();
+  $('#lol1').hide();
+  $('#lol2').hide();
+  $('#lol3').hide();
+  $('#lol4').hide();
+  $('#lol5').hide();
+  $('#lol6').hide();
+  $('#lol7').hide();
+
+});
+
+  $("#lol4").click(function(){
+    $('#event2').show();
+      $('#mapdist').hide()
+
+  $('#lol').hide();
+  $('#lol1').hide();
+  $('#lol2').hide();
+  $('#lol3').hide();
+  $('#lol4').hide();
+  $('#lol5').hide();
+  $('#lol6').hide();
+  $('#lol7').hide();
+
+});
+  
+  
+  
+
+});
+
+
+</script>
+
+<style>
+
+
+#clickme {
+	left: 1000px;
+	top: 90px;
+	background-color: rgba(200, 200 , 100, 0.8);
+	position: absolute;
+	border:none
+	
+	
+	}
+#clickme:hover
+{
+  background-color: rgba(0, 255, 255, 0.5);
+    color: black;
+}
+		
+	
+	
+
+
+#lol {
+	left:1000px;
+	top: 90px;
+	background-color: rgba(200, 200 , 100, 0.8);
+	position: absolute; 	border:none
+
+}
+
+#lol:hover
+{
+  background-color: rgba(255, 255, 0, 0.5);
+    color: black;
+}
+
+#lol1 {
+	left:1000px;
+	top: 90px;
+	background-color: rgba(200, 200 , 100, 0.8);
+	position: absolute; 	border:none
+
+}
+
+#lol1:hover
+{
+  background-color: rgba(255, 200, 50, 0.5);
+    color: black;
+}
+
+
+#lol2 {
+	left:1000px;
+	top: 90px;
+	background-color: rgba(200, 200 , 100, 0.8);
+	position: absolute;	border:none
+
+}
+
+#lol2:hover
+{
+  background-color: rgba(255, 140, 100, 0.5);
+    color: black;
+}
+
+#lol3 {
+	left:1000px;
+	top: 90px;
+	background-color: rgba(200, 200 , 100, 0.8);
+	position: absolute;	border:none
+
+}
+
+#lol3:hover
+{
+  background-color: rgba(255, 70, 150, 0.5);
+    color: black;
+}
+
+#lol4 {
+	left:1000px;
+	top: 90px;
+	background-color: rgba(200, 200 , 100, 0.8);
+	position: absolute;	border:none
+
+}
+
+#lol4:hover
+{
+  background-color: rgba(255, 0, 200, 0.5);
+    color: black;
+}
+
+#lol5 {
+	left:850px;
+	top: 340px;
+	background-color: rgba(125, 0, 255, 0.5);
+	position: absolute;	border:none
+
+}
+
+#lol5:hover
+{
+  background-color: rgba(150, 0, 200, 0.5);
+    color: black;
+}
+
+#lol6 {
+	left:800px;
+	top: 230px;
+	background-color: rgba(125, 0, 255, 0.5);
+	position: absolute;	border:none
+}
+
+#lol6:hover
+{
+  background-color: rgba(50, 0, 255, 0.7);
+    color: black;
+}
+
+#lol7 {
+	left:700px;
+	top: 200px;
+	background-color: rgba(125, 0, 255, 0.5);
+	position: absolute;	border:none
+
+}
+
+#lol7:hover
+{
+  background-color: rgba(0, 255 , 255, 0.5);
+    color: black;
+}
+
+
+#weather1 {
+        position: absolute;
+        top: 10px;
+        left: 20%;
+        margin-left: -250px;
+        z-index: 5;
+        background-color: rgba(0, 200 , 120, 0.8);
+        padding: 5px;
+        border: 1px solid #999;
+      }
+      
+#weather2 {
+        position: absolute;
+        top: 10px;
+        left: 20%;
+        margin-left: -250px;
+        z-index: 5;
+        background-color: rgba(0, 200 , 120, 0.8);
+        padding: 5px;
+        border: 1px solid #999;
+      }
+      
+#weather3 {
+        position: absolute;
+        top: 10px;
+        left: 20%;
+        margin-left: -250px;
+        z-index: 5;
+        background-color: rgba(0, 200 , 120, 0.8);
+        padding: 5px;
+        border: 1px solid #999;
+      }
+      
+#event1 {
+        position: absolute;
+        top: 10px;
+        left: 20%;
+        margin-left: -250px;
+        z-index: 5;
+        background-color: rgba(0, 200 , 120, 0.8);
+        padding: 5px;
+        border: 1px solid #999;
+      }      
+#event2 {
+        position: absolute;
+        top: 10px;
+        left: 20%;
+        margin-left: -250px;
+        z-index: 5;
+        background-color: rgba(0, 200 , 120, 0.8);
+        padding: 5px;
+        border: 1px solid #999;
+      }            
+      
+#mapdist {
+        position: absolute;
+        top: 400px;
+        left: 70%;
+        margin-left: -250px;
+        z-index: 5;
+        background-color: rgba(200, 200 , 100, 0.8);
+        padding: 5px;
+        border: 1px solid #999;
+      }  
+      
+a:link { text-decoration: none; font-size: 15px; 
+font-family: Verdana; color:#999999; font-weight:BOLD;}
+
+
+a:visited { text-decoration: none; font-size: 15px; 
+font-family: Verdana; color:#999999; font-weight:BOLD;}
+
+
+a:hover { text-decoration: none; font-size: 17px;
+font-family: Verdana; color:rgba(255, 0, 255, 1); font-weight:BOLD;}
+                  
+      
+</style>
+
+</head>
+
+<body style="background-color: rgba(125, 0, 255, 0.4)" background='GB.jpg'>
+
+
+<div id=AA>
+<button id=clickme style="color:red; font-size:larger" type='button'> Click to navigate </button>
+<button id=lol style="color:red; font-size:medium">Weather 1</button>
+<button id=lol1 style="color:red; font-size:medium">Weather 2</button>
+
+<button id=lol2 style="color:red; font-size:large">Weather 3</button>
+
+<button id=lol3 style="color:red; font-size:medium">Events 1</button>
+<button id=lol4 style="color:red; font-size:medium">Events 2</button>
+<!-- 
+<button id=lol5>adsd</button>
+<button id=lol6>adsd</button>
+<button id=lol7>adsd</button>
+ -->
+</div>
+
+<div id=weather1>
+<h1> Weather Data (1) </h1>
+<p> The graph below shows the distribution of trips according to rain level. </p>
+<p> Title: 'No Rain', 'Rain', 'Shower', 'Thundery Shower'</p>
+<img src='RawWeather.jpeg'><img>
+</div>
+
+<div id=weather2>
+<h1> Weather Data (2) </h1>
+<p> However, considering that No rain occurs much more often <br>than rain, we have to normalize it somehow.</br> </p>
+<p> Method of normalization: divide by the percentage of occurrence <br> on the days the trips was recorded </br></p>
+<img src='Normalisedweather.jpeg'><img>
+</div>
+
+<div id=weather3>
+<h1> Weather Data (3) </h1>
+<p> This plot below indicates the percentage of choice of vehicle in the trips <br> according to weather. </br> </p>
+<p> Haze data is omitted due to the large discrepancy. (Remind me of this point) <br> (since it's interesting as well) </br></p>
+<img src='WeatherPerc.jpg'><img>
+</div>
+<div id=event1>
+<p> Below are the relevant graphs for events that happened during the travel time</p>
+<br>
+<img src='Disttoclosest.jpeg'><img>
+</br>
+<br>
+
+<img src='Noofevents.jpeg'><img>
+</br>
+<img src='Meandisttoall.jpeg'><img>
+</div>
+
+<div id=event2>
+<h1> By category: </h1>
+<p> Top 10 closest</p>
+<br>
+<img src='Top10Clos.png' height="200" width="550"><img>
+</br>
+<p> Top 10 occurence</p>
+<img src='Top10Oc.png' height="200" width="550"><img>
+</div>
+
+<div id=mapdist>
+<h4>Link to map distributions</h4>
+<ul>
+  <li><a href="EventsMarker.html"> Distribution of all events concurrently happen with travel trips</a></li>
+  <li><a href="TripsMarker.html">Distribution of all travel points</a></li>
+</ul>
+
+</div>
+
+</body>
+</html>
