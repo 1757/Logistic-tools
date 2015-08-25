@@ -1,0 +1,18 @@
+doctype html
+html
+  head
+    title!= title
+    link(rel='stylesheet', href='/css/materialize.min.css')
+  body
+    nav
+      .nav-wrapper
+        a.brand-logo.center(href='#')!= title
+    .container
+      != yield
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js')
+    script(src='/js/materialize.min.js')
+    script.
+      $(document).ready(function() {
+        $('select').material_select();
+        $('.modal-trigger').leanModal();
+      });

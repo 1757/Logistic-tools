@@ -1,0 +1,104 @@
+form
+  .divider
+  .section.row
+    .col.s4
+      h4 Innovator<br>Characteristics
+    .col.s4
+      h4 Partner<br>Characteristics
+    .col.s4
+      h4 Deal<br>Characteristics
+  .divider
+  .section.row
+    .input-field.col.s4
+      select
+        option(value = '', disabled = '', selected = '') Select an option
+        each country in countries
+          option(value = country)= country
+      label Country
+    .input-field.col.s4
+      select
+        option(value = '', disabled = '', selected = '') Select an option
+        each country in countries
+          option(value = country)= country
+      label Country
+    .input-field.col.s4
+      input#first_name2.validate(type='tel', placeholder='in million USD')
+      label.active(for='first_name2') Deal size
+  .divider
+  .section.row
+    - var startYear = 1900
+    - var currentYear = new Date().getFullYear()
+    .input-field.col.s4
+      select
+        option(value = '', disabled = '', selected = '') Select a year
+        - var year = currentYear
+        while year >= startYear
+          option(value = year)!= year
+          - year--
+      label Year innovator was founded
+    .input-field.col.s4
+      select
+        option(value = '', disabled = '', selected = '') Select a year
+        - var year = currentYear
+        while year >= startYear
+          option(value = year)!= year
+          - year--
+      label Year innovator was founded
+    .input-field.col.s4
+      select
+        option(value = '', disabled = '', selected = '') Select a year
+        - var year = currentYear
+        while year >= startYear
+          option(value = year)!= year
+          - year--
+      label Year alliance was founded
+  .divider
+  .section.row
+    .input-field.col.s4
+      p.switch
+        label
+          | Public firm
+          input(type='checkbox')
+          span.lever
+          | Private firm
+    .input-field.col.s4
+      p.switch
+        label
+          | None
+          input(type='checkbox')
+          span.lever
+          | Bio-technology firm
+    .input-field.col.s4
+      p.switch
+        label
+          | Exclusive
+          input(type='checkbox')
+          span.lever
+          | Non-exclusive
+  .divider
+  .section.row
+    .input-field.col.s4
+      input#employee-count.validate(type='tel')
+      label.active(for='employee-count') Number of employees
+    .input-field.col.s4
+      label Number of previous alliances
+      p.range-field(style='margin-top: 27px')
+        input#test5(type='range', min='0', max='100')
+    .input-field.col.s4
+      select
+        option(value = '', disabled = '', selected = '') Select a stage
+        each stage, index in ndpCycleStages
+          option(value = index+1)!= stage
+      label NDP Cycle Stage
+
+// Modal Trigger
+a.waves-effect.waves-light.btn.modal-trigger(href='#modal1') Calculate
+// Modal Structure
+#modal1.modal
+  .modal-content
+    h4 Result of logistic regression
+    p Based on our analysis of over 2000 biopharmaceutical alliances, there would be a P% chance of the alliance you specified being organized as a collaborative alliance and a 100-P% chance of it being organized as a sequential alliance. For a complete specification of the model used and more detail on the underlying theory, please see"   
+
+  .modal-footer
+    a.modal-action.modal-close.waves-effect.waves-green.btn-flat(href='#!') Dismiss
+

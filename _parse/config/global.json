@@ -1,0 +1,14 @@
+{
+  "global": {
+    "parseVersion": "1.5.0"
+  },
+  "applications": {
+    "PharmaLS": {
+      "applicationId": "myGLkXjxC4cZF0Rh0An1oxauXrE4AxsIXAhjrrMF",
+      "masterKey": "uImeGmKjdbrFtoHrTPwVpVjgLOLWOMpoVO98wkhS"
+    },
+    "_default": {
+      "link": "PharmaLS"
+    }
+  }
+}
