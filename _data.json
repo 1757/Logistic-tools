@@ -1,135 +1,40 @@
 {
   "index": {
-    "countriesScore": [
-      {
-        "name": "Australia",
-        "score": "90"
-      },
-      {
-        "name": "Austria",
-        "score": "90"
-      },
-      {
-        "name": "Belgium",
-        "score": "80"
-      },
-      {
-        "name": "Canada",
-        "score": "90"
-      },
-      {
-        "name": "China",
-        "score": "20"
-      },
-      {
-        "name": "Cuba",
-        "score": "10"
-      },
-      {
-        "name": "Denmark",
-        "score": "90"
-      },
-      {
-        "name": "Finland",
-        "score": "90"
-      },
-      {
-        "name": "France",
-        "score": "80"
-      },
-      {
-        "name": "Germany",
-        "score": "80"
-      },
-      {
-        "name": "Hong Kong",
-        "score": "90"
-      },
-      {
-        "name": "Hungary",
-        "score": "60"
-      },
-      {
-        "name": "Iceland",
-        "score": "90"
-      },
-      {
-        "name": "India",
-        "score": "50"
-      },
-      {
-        "name": "Ireland",
-        "score": "90"
-      },
-      {
-        "name": "Israel",
-        "score": "70"
-      },
-      {
-        "name": "Italy",
-        "score": "50"
-      },
-      {
-        "name": "Japan",
-        "score": "80"
-      },
-      {
-        "name": "Lithuania",
-        "score": "60"
-      },
-      {
-        "name": "Malaysia",
-        "score": "50"
-      },
-      {
-        "name": "Netherlands",
-        "score": "90"
-      },
-      {
-        "name": "New Zealand",
-        "score": "95"
-      },
-      {
-        "name": "Norway",
-        "score": "90"
-      },
-      {
-        "name": "Portugal",
-        "score": "70"
-      },
-      {
-        "name": "Russia",
-        "score": "25"
-      },
-      {
-        "name": "South Korea",
-        "score": "70"
-      },
-      {
-        "name": "Spain",
-        "score": "70"
-      },
-      {
-        "name": "Sweden",
-        "score": "90"
-      },
-      {
-        "name": "Switzerland",
-        "score": "90"
-      },
-      {
-        "name": "Taiwan",
-        "score": "70"
-      },
-      {
-        "name": "UK",
-        "score": "85"
-      },
-      {
-        "name": "USA",
-        "score": "85"
-      }
-    ],
+    "countriesScore": {
+      "Australia": 90,
+      "Austria": 90,
+      "Belgium": 80,
+      "Canada": 90,
+      "China": 20,
+      "Cuba": 10,
+      "Denmark": 90,
+      "Finland": 90,
+      "France": 80,
+      "Germany": 80,
+      "Hong Kong": 90,
+      "Hungary": 60,
+      "Iceland": 90,
+      "India": 50,
+      "Ireland": 90,
+      "Israel": 70,
+      "Italy": 50,
+      "Japan": 80,
+      "Lithuania": 60,
+      "Malaysia": 50,
+      "Netherlands": 90,
+      "New Zealand": 95,
+      "Norway": 90,
+      "Portugal": 70,
+      "Russia": 25,
+      "South Korea": 70,
+      "Spain": 70,
+      "Sweden": 90,
+      "Switzerland": 90,
+      "Taiwan": 70,
+      "UK": 85,
+      "USA": 85,
+      "Others": 50
+    },
     "countries": [
       "Australia",
       "Austria",
@@ -165,7 +70,7 @@
       "USA",
       "Others"
     ],
-    "ndpCycleStages": [
+    "npdCycleStages": [
       "Formulation",
       "Discovery",
       "Lead Molecule",

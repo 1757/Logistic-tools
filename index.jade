@@ -1,4 +1,8 @@
-form
+form(style="position:relative")
+  .section.row#background-row(style="position:absolute; width:102%; z-index: -1000; margin-top: 0; margin-left: -0.75rem; margin-right:-0.75rem; margin-bottom:0;")
+    .col.s4(style="height:100%; background-color:#C5D9F1")
+    .col.s4(style="height:100%; background-color:#FCD5B4")
+    .col.s4(style="height:100%; background-color:#C5D9F1")  
   .divider
   .section.row
     .col.s4
@@ -10,95 +14,155 @@ form
   .divider
   .section.row
     .input-field.col.s4
-      select
+      select(name = 'innovatorCountry')
         option(value = '', disabled = '', selected = '') Select an option
         each country in countries
           option(value = country)= country
       label Country
     .input-field.col.s4
-      select
+      select(name = 'partnerCountry')
         option(value = '', disabled = '', selected = '') Select an option
         each country in countries
           option(value = country)= country
       label Country
     .input-field.col.s4
-      input#first_name2.validate(type='tel', placeholder='in million USD')
-      label.active(for='first_name2') Deal size
+      input#deal-size.validate(name = 'dealSize', type = 'tel', placeholder = 'in million USD')
+      label.active(for = 'deal-size') Deal size
   .divider
   .section.row
-    - var startYear = 1900
+    - var startYear = 1668
     - var currentYear = new Date().getFullYear()
     .input-field.col.s4
-      select
-        option(value = '', disabled = '', selected = '') Select a year
-        - var year = currentYear
-        while year >= startYear
-          option(value = year)!= year
-          - year--
       label Year innovator was founded
+      p.range-field(style='margin-top: 27px')
+        input(name='innovatorFoundYear', type='range', min=startYear, max=currentYear, value=currentYear)
     .input-field.col.s4
-      select
-        option(value = '', disabled = '', selected = '') Select a year
-        - var year = currentYear
-        while year >= startYear
-          option(value = year)!= year
-          - year--
-      label Year innovator was founded
+      label Year partner was founded
+      p.range-field(style='margin-top: 27px')
+        input(name='partnerFoundYear', type='range', min=startYear, max=currentYear, value=currentYear)
     .input-field.col.s4
-      select
-        option(value = '', disabled = '', selected = '') Select a year
-        - var year = currentYear
-        while year >= startYear
-          option(value = year)!= year
-          - year--
-      label Year alliance was founded
+      label Year alliance was formed
+      p.range-field(style='margin-top: 27px')
+        input(name='allianceFormedYear', type='range', min=startYear, max=currentYear, value=currentYear)
+    //- .input-field.col.s4
+    //-   select(name = 'innovatorFoundYear')
+    //-     option(value = '', disabled = '', selected = '') Select a year
+    //-     - var year = currentYear
+    //-     while year >= startYear
+    //-       option(value = year)!= year
+    //-       - year--
+    //-   label Year innovator was founded
+    //- .input-field.col.s4
+    //-   select(name = 'partnerFoundYear')
+    //-     option(value = '', disabled = '', selected = '') Select a year
+    //-     - var year = currentYear
+    //-     while year >= startYear
+    //-       option(value = year)!= year
+    //-       - year--
+    //-   label Year partner was founded
+    //- .input-field.col.s4
+    //-   select(name = 'allianceFormedYear')
+    //-     option(value = '', disabled = '', selected = '') Select a year
+    //-     - var year = currentYear
+    //-     while year >= startYear
+    //-       option(value = year)!= year
+    //-       - year--
+    //-   label Year alliance was formed
+  .divider
+  .section.row
+    .input-field.col.s4
+      input#innovator-employee-count.validate(name='innovatorEmployeeCount', type='tel')
+      label.active(for='innovator-employee-count') Number of employees
+    .input-field.col.s4
+      input#partner-employee-count.validate(name='partnerEmployeeCount', type='tel')
+      label.active(for='partner-employee-count') Number of employees
+    .input-field.col.s4
+      label.tooltipped(data-position='top', data-delay='50', data-tooltip='The probability that the alliance fails in all therapeutic areas that it targets.') Risk percentage
+      p.range-field(style='margin-top: 27px')
+        input(name='risk', type='range', min='0', max='100', value='0')
   .divider
   .section.row
     .input-field.col.s4
       p.switch
         label
           | Public firm
-          input(type='checkbox')
+          input(name = 'innovatorPublicPrivate', type='checkbox')
           span.lever
           | Private firm
     .input-field.col.s4
       p.switch
         label
-          | None
-          input(type='checkbox')
+          | Public firm
+          input(name = 'partnerPublicPrivate', type='checkbox')
           span.lever
-          | Bio-technology firm
+          | Private firm
     .input-field.col.s4
       p.switch
-        label
+        label.tooltipped(data-position='top', data-delay='50', data-tooltip='Indicates whether an alliance involves an exclusive license.')
           | Exclusive
-          input(type='checkbox')
+          input(name = 'dealExclusivity', type='checkbox')
           span.lever
           | Non-exclusive
   .divider
   .section.row
     .input-field.col.s4
-      input#employee-count.validate(type='tel')
-      label.active(for='employee-count') Number of employees
+      p.switch
+        label
+          | Pharma
+          input(name='innovatorBiotech', type='checkbox')
+          span.lever
+          | Biotech
     .input-field.col.s4
-      label Number of previous alliances
+      p.switch
+        label
+          | Pharma
+          input(name='partnerBiotech', type='checkbox')
+          span.lever
+          | Biotech
+    .input-field.col.s4
+      p.switch
+        label
+          | Regional
+          input(name='worldwideCoverage', type='checkbox')
+          span.lever
+          | Worldwide
+  .divider
+  .section.row
+    .input-field.col.s4.offset-s4
+      label Number of prior alliances
       p.range-field(style='margin-top: 27px')
-        input#test5(type='range', min='0', max='100')
+        input(name='partnerExperience', type='range', min='0', max='100', value='0')
     .input-field.col.s4
-      select
+      select(name='npdCycleStages')
         option(value = '', disabled = '', selected = '') Select a stage
-        each stage, index in ndpCycleStages
+        each stage, index in npdCycleStages
           option(value = index+1)!= stage
-      label NDP Cycle Stage
+      label Cycle Stage
 
 // Modal Trigger
-a.waves-effect.waves-light.btn.modal-trigger(href='#modal1') Calculate
+a.waves-effect.waves-light.btn#calculate-button(href='#!' style="background-color:rgb(22,54,92)") Calculate
 // Modal Structure
-#modal1.modal
+#result-modal.modal
   .modal-content
     h4 Result of logistic regression
-    p Based on our analysis of over 2000 biopharmaceutical alliances, there would be a P% chance of the alliance you specified being organized as a collaborative alliance and a 100-P% chance of it being organized as a sequential alliance. For a complete specification of the model used and more detail on the underlying theory, please see"   
+    p
+      |Based on our analysis of 2105 biopharmaceutical alliances, the probability that the alliance you specified has a(n) 
+      span#result-display
+      |% probability of being organized as a collaborative alliance and a 
+      span#result-failure-display
+      |% probability of being organized as a sequential alliance. For more information on how contract theory helps predict the operational implementation of new product development alliances and more information on the underlying model please 
+      a(href="http://papers.ssrn.com/sol3/papers.cfm?abstract_id=2269381" target="_blank") click here
+      |.
 
   .modal-footer
     a.modal-action.modal-close.waves-effect.waves-green.btn-flat(href='#!') Dismiss
 
+script.
+  document.addEventListener('DOMContentLoaded', function(){
+    $.countriesScore = !{JSON.stringify(countriesScore)}
+    $(function () {
+      var height = $('form').height()
+      console.log(height)
+      $('#background-row').height(height)
+    })
+  })
