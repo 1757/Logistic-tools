@@ -21,11 +21,12 @@ $.fn.serializeObject = function () {
 
 $(function () {
   $('select').material_select()
-
   $('label').css('color', 'black')
   $('.select-dropdown').css('color', 'rgb(100,100,100)')
   console.log($('.select-dropdown'))
   $('.modal-trigger').leanModal()
+  $('.input-year').prop('max', new Date().getFullYear())
+  $('.input-year').prop('value', new Date().getFullYear())
   $('.range-field input').on('input', function (e) {
     var value = e.target.value
     $(this).parent().find('.value').html(value)

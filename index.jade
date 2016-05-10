@@ -35,39 +35,15 @@ form(style="position:relative")
     .input-field.col.s4
       label Year innovator was founded
       p.range-field(style='margin-top: 27px')
-        input(name='innovatorFoundYear', type='range', min=startYear, max=currentYear, value=currentYear)
+        input(class='input-year', name='innovatorFoundYear', type='range', min=startYear, max=currentYear, value=currentYear)
     .input-field.col.s4
       label Year partner was founded
       p.range-field(style='margin-top: 27px')
-        input(name='partnerFoundYear', type='range', min=startYear, max=currentYear, value=currentYear)
+        input(class='input-year', name='partnerFoundYear', type='range', min=startYear, max=currentYear, value=currentYear)
     .input-field.col.s4
       label Year alliance was formed
       p.range-field(style='margin-top: 27px')
-        input(name='allianceFormedYear', type='range', min=startYear, max=currentYear, value=currentYear)
-    //- .input-field.col.s4
-    //-   select(name = 'innovatorFoundYear')
-    //-     option(value = '', disabled = '', selected = '') Select a year
-    //-     - var year = currentYear
-    //-     while year >= startYear
-    //-       option(value = year)!= year
-    //-       - year--
-    //-   label Year innovator was founded
-    //- .input-field.col.s4
-    //-   select(name = 'partnerFoundYear')
-    //-     option(value = '', disabled = '', selected = '') Select a year
-    //-     - var year = currentYear
-    //-     while year >= startYear
-    //-       option(value = year)!= year
-    //-       - year--
-    //-   label Year partner was founded
-    //- .input-field.col.s4
-    //-   select(name = 'allianceFormedYear')
-    //-     option(value = '', disabled = '', selected = '') Select a year
-    //-     - var year = currentYear
-    //-     while year >= startYear
-    //-       option(value = year)!= year
-    //-       - year--
-    //-   label Year alliance was formed
+        input(class='input-year', name='allianceFormedYear', type='range', min=1990, max=currentYear, value=currentYear)
   .divider
   .section.row
     .input-field.col.s4
@@ -146,9 +122,9 @@ a.waves-effect.waves-light.btn#calculate-button(href='#!' style="background-colo
   .modal-content
     h4 Result of logistic regression
     p
-      |Based on our analysis of 2105 biopharmaceutical alliances, the probability that the alliance you specified has a(n) 
+      |Based on our analysis of 2105 biopharmaceutical alliances, the alliance you specified has a(n) 
       span#result-display
-      |% probability of being organized as a collaborative alliance and a 
+      |% probability of being organized as a collaborative alliance and a(n) 
       span#result-failure-display
       |% probability of being organized as a sequential alliance. For more information on how contract theory helps predict the operational implementation of new product development alliances and more information on the underlying model please 
       a(href="http://papers.ssrn.com/sol3/papers.cfm?abstract_id=2269381" target="_blank") click here
