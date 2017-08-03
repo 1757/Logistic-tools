@@ -1,7 +1,56 @@
 /* global $, Parse, _, Materialize */
 'use strict'
 
-Parse.initialize('myGLkXjxC4cZF0Rh0An1oxauXrE4AxsIXAhjrrMF', 'PqPreVmCfg2kYmVvTHqA6obkBmHDsRAR1QIQg4KM')
+var regressionCoefficient = {
+  "1": -0.7740124,
+  "2": -0.2106657,
+  "3": -0.4461743,
+  "4": -0.4622263,
+  "5": -1.927859,
+  "6": -0.4901369,
+  "7": 0.0200975,
+  "8": 0.1001127,
+  "9": -0.4945628,
+  "10": -1.86643,
+  "11": 0.4016888,
+  "12": -0.8926396,
+  "13": -1.153707,
+  "year": 0.0100157,
+  "deal_size": 0.0026842,
+  "exclusive": 0.43887,
+  "worldwide": 0.1059374,
+  "lninnov_emp": -0.010692,
+  "innov_private": 0.0247279,
+  "lnpart_emp": 0.0925521,
+  "partner_private": 0.1052217,
+  "alliance_experience": 0.0115093,
+  "i_judicial_efficacy": 0.0038181,
+  "p_judicial_efficacy": 0.0065467,
+  "relative_industry_exp": 0.001042,
+  "diff_country": 0.1255628,
+  "bio_to_other": 0.3797248,
+  "risk": -1.67063,
+  "npd_cycle": -0.1679328,
+  "_cons": -20.81038
+}
+
+function computePercentage(params) {
+  var sumCompany = 0
+  var companyCount = 13
+  _.times(companyCount, function (index) {
+    sumCompany += regressionCoefficient[index + 1]
+  })
+  var avgCompany = sumCompany / companyCount
+
+  var regression = 0
+  regression += avgCompany
+  _.each(params, function (value, key) {
+    var coefficient = regressionCoefficient[key]
+    regression += coefficient * value
+  })
+  var output = 1 / (1 / Math.exp(regression) + 1)
+  return output
+}
 
 $.fn.serializeObject = function () {
   var o = {}
@@ -23,7 +72,7 @@ $(function () {
   $('select').material_select()
   $('label').css('color', 'black')
   $('.select-dropdown').css('color', 'rgb(100,100,100)')
-  console.log($('.select-dropdown'))
+  // console.log($('.select-dropdown'))
   $('.modal-trigger').leanModal()
   $('.input-year').prop('max', new Date().getFullYear())
   $('.input-year').prop('value', new Date().getFullYear())
@@ -55,30 +104,20 @@ $(function () {
     var shouldContinue = true
     _.each(formattedData, function (value, key) {
       if (isNaN(value) || value === Number.NEGATIVE_INFINITY) {
-        console.log(key)
+        // console.log(key)
         Materialize.toast('Form not completed!', 4000)
         shouldContinue = false
         return false
       }
     })
-    console.log(formattedData)
+    // console.log(formattedData)
     if (!shouldContinue) return
-    Parse.Cloud.run('compute', formattedData, {
-      success: function (result) {
-        console.log(result)
-        var successPercentage = Math.round(result * 1000) / 10
-        var failurePercentage = Math.round((100 - successPercentage) * 10) / 10
-        $('#result-display').html(successPercentage)
-        $('#result-failure-display').html(failurePercentage)
-        $('#result-modal').openModal()
-      },
-      error: function (error) {
-        Materialize.toast(error.code + ': ' + error.message)
-      }
-    })
+    var result = computePercentage(formattedData);
+    // console.log(result)
+    var successPercentage = Math.round(result * 1000) / 10
+    var failurePercentage = Math.round((100 - successPercentage) * 10) / 10
+    $('#result-display').html(successPercentage)
+    $('#result-failure-display').html(failurePercentage)
+    $('#result-modal').openModal()
   })
 })
-
-$(window).load(function () {
-  // Run code
-});
